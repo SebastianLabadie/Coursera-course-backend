@@ -76,7 +76,7 @@ app.use(session({
 
 
 app.use(function (req, res, next) {
-    console.log(req.user);
+    console.log("USERRRRRRRRRRRRRRRR: ",req.user);
 
     if (!req.user) {
       var err = new Error('You are not authenticated!');
@@ -84,6 +84,7 @@ app.use(function (req, res, next) {
       next(err);
     }
     else {
+        console.log("ES ADMIN?: ",req.user.admin)
           next();
     }
 });
